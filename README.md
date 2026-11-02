@@ -5,17 +5,17 @@
 ---
 
 <div align="center">
-<a href="https://github.com/Fevol/obsidian-translate/" style="text-decoration: none">
+<a href="https://github.com/gervasiodbjr/obsidian-translate/" style="text-decoration: none">
 <img alt="Obsidian Translate downloads - latest release" src="https://img.shields.io/badge/dynamic/json?query=%24%5B%22translate%22%5D.downloads&url=https%3A%2F%2Fraw.githubusercontent.com%2Fobsidianmd%2Fobsidian-releases%2Fmaster%2Fcommunity-plugin-stats.json&label=Downloads:&logo=obsidian&color=8c79de&logoColor=8c79de">
 </a>
-<a href="https://github.com/Fevol/obsidian-translate/stargazers" style="text-decoration: none">
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/fevol/obsidian-translate?color=yellow&label=Stargazers%3A&logo=OpenTelemetry&logoColor=yellow">
+<a href="https://github.com/gervasiodbjr/obsidian-translate/stargazers" style="text-decoration: none">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/gervasiodbjr/obsidian-translate?color=yellow&label=Stargazers%3A&logo=OpenTelemetry&logoColor=yellow">
 </a>
-<a href="https://github.com/Fevol/obsidian-translate/actions/workflows/release.yml" style="text-decoration: none">
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/fevol/obsidian-translate/.github/workflows/release.yml?label=Build%20status%3A&logo=buddy&logoColor=5cff1e">
+<a href="https://github.com/gervasiodbjr/obsidian-translate/actions/workflows/release.yml" style="text-decoration: none">
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/gervasiodbjr/obsidian-translate/.github/workflows/release.yml?label=Build%20status%3A&logo=buddy&logoColor=5cff1e">
 </a>
-<a href="https://github.com/Fevol/obsidian-translate/releases/latest" style="text-decoration: none">
-<img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/fevol/obsidian-translate?color=%234e96af&display_name=tag&include_prereleases&label=Latest%20release%3A&logo=Dropbox&logoColor=%236abdd9">
+<a href="https://github.com/gervasiodbjr/obsidian-translate/releases/latest" style="text-decoration: none">
+<img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/gervasiodbjr/obsidian-translate?color=%234e96af&display_name=tag&include_prereleases&label=Latest%20release%3A&logo=Dropbox&logoColor=%236abdd9">
 </a>
 <br>
 <a href="https://svelte.dev" style="text-decoration: none">
@@ -30,11 +30,11 @@
 
 <div align="center">
 <h4>
- <a href="https://github.com/Fevol/obsidian-translate/blob/master/docs/API.md">API</a>
+ <a href="https://github.com/gervasiodbjr/obsidian-translate/blob/master/docs/API.md">API</a>
  <span>&nbsp;·&nbsp;</span>
- <a href="https://github.com/Fevol/obsidian-translate/blob/master/docs/TUTORIAL.md">FEATURES</a>
+ <a href="https://github.com/gervasiodbjr/obsidian-translate/blob/master/docs/TUTORIAL.md">FEATURES</a>
  <span>&nbsp;·&nbsp;</span>
- <a href="https://github.com/Fevol/obsidian-translate/blob/master/src/README.md">CODE</a>
+ <a href="https://github.com/gervasiodbjr/obsidian-translate/blob/master/src/README.md">CODE</a>
 </h4>
 </div>
 
@@ -92,11 +92,11 @@ button -- if the button turns green (indicating that you're properly connected t
 Now, you can open the Translation View and start translating, or make a selection in your note and translate it
 with the `Translate selection` command!
 
-It is heavily recommended that you read the [documentation](https://github.com/Fevol/obsidian-translate/blob/master/docs/TUTORIAL.md),
+It is heavily recommended that you read the [documentation](https://github.com/gervasiodbjr/obsidian-translate/blob/master/docs/TUTORIAL.md),
 it has tutorial videos for the most important features, and gives a detailed explanation of the available features.
 
 For most services, you _will_ have to sign-up for an account (with a credit card), check the
-[table below](https://github.com/fevol/obsidian-translate#services-overview) to see which services require sign-up.
+[table below](https://github.com/gervasiodbjr/obsidian-translate#services-overview) to see which services require sign-up.
 _**This plugin does not provide any API keys.**_
 
 <a name="free-alternatives"></a>
@@ -169,11 +169,11 @@ _² Your credit card will be charged if you exceed the free limit_<br>
 
 ## 🎯 Features
 
-For more information, head over to the [documentation](https://github.com/Fevol/obsidian-translate/blob/master/docs/TUTORIAL.md).
+For more information, head over to the [documentation](https://github.com/gervasiodbjr/obsidian-translate/blob/master/docs/TUTORIAL.md).
 
-If you want to use this plugin with extensions, make sure to take a look at the [API](https://github.com/Fevol/obsidian-translate/blob/master/docs/API.md).
+If you want to use this plugin with extensions, make sure to take a look at the [API](https://github.com/gervasiodbjr/obsidian-translate/blob/master/docs/API.md).
 
-<video src="https://raw.githubusercontent.com/Fevol/obsidian-translate/master/images/obsidian-translate.webm.mp4" controls></video>
+<video src="https://raw.githubusercontent.com/gervasiodbjr/obsidian-translate/master/images/obsidian-translate.webm.mp4" controls></video>
 
 ### Commands
 
@@ -278,7 +278,7 @@ device itself (without storing them in the plugin data).
 The UI components live in a git submodule, so clone with `--recurse-submodules`, or fetch them afterwards:
 
 ```bash
-git clone --recurse-submodules https://github.com/Fevol/obsidian-translate.git
+git clone --recurse-submodules https://github.com/gervasiodbjr/obsidian-translate.git
 cd obsidian-translate
 # or, in an existing clone:
 git submodule update --init
@@ -341,8 +341,8 @@ copy the files over and reload the plugin.
 
 ## 💬 Discussion and Feedback
 
-Any feedback would _very_ much be appreciated. Please use the [GitHub issue tracker](https://github.com/Fevol/obsidian-translate/issues/new) to report bugs, request features,
-or suggest improvements, or message me over on Discord (@Fevol#9470).
+Any feedback would _very_ much be appreciated. Please use the [GitHub issue tracker](https://github.com/gervasiodbjr/obsidian-translate/issues/new) to report bugs, request features,
+or suggest improvements, or message me over on Discord (@gervasiodbjr#9470).
 
 This plugin started off as a personal passion project. It ballooned into something much bigger than I had originally intended.
 I hope that this plugin will be useful to you, and I plan to keep improving on it in the future.
@@ -393,4 +393,4 @@ consider some of these charities first:
 
 If you still feel like donating to me, you can do so here:
 
-<a href='https://ko-fi.com/fevol' target='_blank'><img height='35' style='border:0px;height:40px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+<a href='https://ko-fi.com/gervasiodbjr' target='_blank'><img height='35' style='border:0px;height:40px;' src='https://az743702.vo.msecnd.net/cdn/kofi3.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
