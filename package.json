@@ -4,7 +4,7 @@
     "description": "Translate text and notes in Obsidian.md with Google Translate, DeepL, Azure, and more.",
     "main": "main.js",
     "scripts": {
-        "dev": "bun esbuild.config.mjs",
+        "dev": "bun scripts/build/esbuild.config.ts development",
         "build": "bun run tsc -noEmit -skipLibCheck && bun scripts/build/esbuild.config.ts production",
         "build:dev": "bun run tsc -noEmit -skipLibCheck && bun scripts/build/esbuild.config.ts development",
         "version": "bun version-bump.mjs && git add manifest.json versions.json",
