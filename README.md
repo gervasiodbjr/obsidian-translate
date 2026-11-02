@@ -65,6 +65,7 @@ integrates with ten different translation services.
   - [⚖️ Legal](#legal)
   - [👁️‍🗨️ Privacy](#privacy)
   - [🔑 Security](#security)
+- [🛠️ Building from source](#building-from-source)
 - [💬 Discussion and Feedback](#discussion-and-feedback)
 - [💎 Acknowledgements](#acknowledgements)
 - [🤝 Contributors](#contributors)
@@ -251,6 +252,30 @@ Please be aware that your API keys are stored in plain text by default,
 and can be accessed by anyone that has access to your vault. If you wish to keep your API keys private,
 you can enable the option to encrypt them with a password under `General Settings`, or choose to only store them on the
 device itself (without storing them in the plugin data).
+
+---
+
+<a name="building-from-source"></a>
+
+## 🛠️ Building from source
+
+The UI components live in a git submodule, so clone with `--recurse-submodules`, or fetch them afterwards:
+
+```bash
+git clone --recurse-submodules https://github.com/Fevol/obsidian-translate.git
+# or, in an existing clone:
+git submodule update --init
+```
+
+Then install the dependencies with [Bun](https://bun.sh/) and build:
+
+```bash
+bun install
+bun run build
+```
+
+This produces `main.js` and `styles.css` in the repository root. To install the build, copy them together with
+`manifest.json` into `<vault>/.obsidian/plugins/translate/`, then reload the plugin in Obsidian.
 
 ---
 
