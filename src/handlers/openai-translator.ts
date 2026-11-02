@@ -14,7 +14,8 @@ export class OpenaiTranslator extends DummyTranslate {
 	#host?: string;
 	#api_key?: string;
 	id = "openai_translator";
-	model? = "gpt-6.1-terra";
+	model? = "gpt-3.5-turbo";
+	temperature = 0.3;
 
 	requires_api_key = false;
 
@@ -22,7 +23,7 @@ export class OpenaiTranslator extends DummyTranslate {
 		super();
 		this.#api_key = settings.api_key;
 		this.#host = settings.host;
-		this.model = settings.model ?? this.model;
+		this.model = settings.model;
 		if (this.#host)
 			this.#host = !this.#host.startsWith("http") ? `https://${this.#host}` : new URL(this.#host).origin;
 	}
@@ -30,7 +31,7 @@ export class OpenaiTranslator extends DummyTranslate {
 	update_settings(settings: ServiceSettings): void {
 		this.#api_key = settings.api_key ?? this.#api_key;
 		this.#host = settings.host ?? this.#host;
-		this.model = settings.model ?? this.model;
+		this.model = settings.model ?? "gpt-3.5-turbo";
 		if (this.#host)
 			this.#host = !this.#host.startsWith("http") ? `https://${this.#host}` : new URL(this.#host).origin;
 	}
@@ -55,6 +56,7 @@ export class OpenaiTranslator extends DummyTranslate {
 					// Token cost: 10
 					{ "role": "user", "content": "Say I" },
 				],
+				"temperature": this.temperature,
 			}),
 			headers: {
 				"Content-Type": "application/json",
@@ -87,6 +89,7 @@ export class OpenaiTranslator extends DummyTranslate {
 							text,
 					},
 				],
+				"temperature": this.temperature,
 			}),
 			headers: {
 				"Content-Type": "application/json",
@@ -132,6 +135,7 @@ export class OpenaiTranslator extends DummyTranslate {
 				"messages": [
 					{ "role": "user", "content": prompt + "\n" + text },
 				],
+				"temperature": this.temperature,
 			}),
 			headers: {
 				"Content-Type": "application/json",
