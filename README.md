@@ -66,6 +66,10 @@ integrates with ten different translation services.
   - [👁️‍🗨️ Privacy](#privacy)
   - [🔑 Security](#security)
 - [🛠️ Building from source](#building-from-source)
+  - [Requirements](#requirements)
+  - [Building](#building)
+  - [Installing in Obsidian](#installing-in-obsidian)
+  - [Troubleshooting](#build-troubleshooting)
 - [💬 Discussion and Feedback](#discussion-and-feedback)
 - [💎 Acknowledgements](#acknowledgements)
 - [🤝 Contributors](#contributors)
@@ -259,23 +263,77 @@ device itself (without storing them in the plugin data).
 
 ## 🛠️ Building from source
 
+<a name="requirements"></a>
+
+### Requirements
+
+- [Git](https://git-scm.com/)
+- [Bun](https://bun.sh/) (used for installing dependencies and running the build scripts)
+- Obsidian `1.0.0` or newer
+
+<a name="building"></a>
+
+### Building
+
 The UI components live in a git submodule, so clone with `--recurse-submodules`, or fetch them afterwards:
 
 ```bash
 git clone --recurse-submodules https://github.com/Fevol/obsidian-translate.git
+cd obsidian-translate
 # or, in an existing clone:
 git submodule update --init
 ```
 
-Then install the dependencies with [Bun](https://bun.sh/) and build:
+Install the dependencies and build the plugin:
 
 ```bash
 bun install
 bun run build
 ```
 
-This produces `main.js` and `styles.css` in the repository root. To install the build, copy them together with
-`manifest.json` into `<vault>/.obsidian/plugins/translate/`, then reload the plugin in Obsidian.
+This type-checks the code and writes a minified `main.js` and `styles.css` to the repository root.
+Use `bun run dev` instead for an unminified development build without type-checking.
+
+<a name="installing-in-obsidian"></a>
+
+### Installing in Obsidian
+
+1. Find your vault folder (the folder you opened in Obsidian). Plugins live in its hidden `.obsidian/plugins` folder;
+   this plugin uses the folder `translate`.
+2. Create the plugin folder and copy the three build files into it:
+
+   ```bash
+   # macOS / Linux
+   mkdir -p "<vault>/.obsidian/plugins/translate"
+   cp main.js styles.css manifest.json "<vault>/.obsidian/plugins/translate/"
+   ```
+
+   ```powershell
+   # Windows (PowerShell)
+   New-Item -ItemType Directory -Force "<vault>\.obsidian\plugins\translate"
+   Copy-Item main.js, styles.css, manifest.json "<vault>\.obsidian\plugins\translate\"
+   ```
+
+   If the plugin was already installed from the community plugins browser, this replaces its files.
+   Your settings are kept, as they are stored separately in `data.json`.
+3. In Obsidian, open `Settings → Community plugins`, turn off `Restricted mode` if needed,
+   reload the list of installed plugins and enable **Translate**.
+   If the plugin was already enabled, disable and re-enable it (or restart Obsidian) to load the new build.
+4. Continue with the regular [set-up](#setup): select a translation service and enter its API key.
+
+To update a local build later, pull the latest changes, run `git submodule update --init` and `bun run build` again,
+copy the files over and reload the plugin.
+
+<a name="build-troubleshooting"></a>
+
+### Troubleshooting
+
+- **`Could not resolve "../components"` or `Can't find stylesheet to import`**: the components submodule is missing,
+  run `git submodule update --init`.
+- **`Cannot find package '<name>'`**: the dependencies are not installed or are outdated, run `bun install`.
+- **The plugin does not show up in Obsidian**: make sure `main.js`, `styles.css` and `manifest.json` are directly
+  inside `.obsidian/plugins/translate/` (not in a sub-folder), then reload the plugin list.
+- **Errors at runtime**: open the developer console (`Ctrl+Shift+I`, or `Cmd+Option+I` on macOS) to see the error message.
 
 ---
 
